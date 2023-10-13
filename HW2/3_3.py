@@ -9,14 +9,13 @@ def maximum_consecutive_int_value(float_type):
         return 2**24 -1
     elif epsilon == np.finfo(np.float64).eps:
         return 2**53 -1
-    else:
-        return 2**112-1
+
 
 ##32 1.1920929e-07
 ##64 2.220446049250313e-16
 ##128   
-float_type_32 = np.float32
-result = maximum_consecutive_int_value(float_type_32)
-print(f"Maximum consecutive integer for {float_type_32} is {result}")
+float_type_16 = np.float16
+result = maximum_consecutive_int_value(float_type_16)
+print(f"Maximum consecutive integer for {float_type_16} is {result}")
 
 
