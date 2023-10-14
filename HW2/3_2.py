@@ -1,3 +1,5 @@
+# Copyright 2023 Jinzhi Shen jinzhis9@bu.edu
+
 #### the reason why becoming zero is not happening in the second case is because of the difference
 #### between numpy arrays and a numpy scalar: the numpy array when it it ahandling overflow, it will
 #### change back to the smallest number while the scalar will sometimes ectends its own bits and creating a rextremly long 

@@ -1,3 +1,4 @@
+# Copyright 2023 Jinzhi Shen jinzhis9@bu.edu
 import numpy as np
 
 def get_next_float(start_float, *, index=1):

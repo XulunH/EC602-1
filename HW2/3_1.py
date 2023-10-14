@@ -1,3 +1,4 @@
+# Copyright 2023 Jinzhi Shen jinzhis9@bu.edu
 def show_integer_properties():
     Table = "{:<6} {:<22} {:<22} {:<22}"
     print(Table.format('Bytes','Largest Unsigned Int','Minimum Signed Int','Maximum Signed Int'))

@@ -1,3 +1,4 @@
+# Copyright 2023 Jinzhi Shen jinzhis9@bu.edu
 import numpy
 
 def breakdown_float(f):

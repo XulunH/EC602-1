@@ -1,3 +1,4 @@
+# Copyright 2023 Jinzhi Shen jinzhis9@bu.edu
 import numpy as np
 
 def maximum_consecutive_int_value(float_type):

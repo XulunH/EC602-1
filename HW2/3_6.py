@@ -1,3 +1,4 @@
+# Copyright 2023 Jinzhi Shen jinzhis9@bu.edu
 import numpy
 
 def construct_float(float_parms, *, float_type=numpy.float64, subnormal=False):

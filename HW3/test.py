@@ -7,7 +7,7 @@ import random
 import os
 import math
 import random
-
+from hw3_model_poly import Polynomial
 
 
 COURSE = 'ec602'
