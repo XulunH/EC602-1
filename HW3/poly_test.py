@@ -11,6 +11,8 @@ class Polynomial:
         res = ""
         for degree, coeff in sorted(self.coefficients.items(), reverse=True):
             term = ""
+            if coeff == 0:
+                pass
             if coeff != 1 or degree == 0:
                 term += f"{coeff:g}"
             if degree > 0:
@@ -68,23 +70,23 @@ class Polynomial:
     def deriv(self):
         derivative = Polynomial()
         for degree, coeff in self.coefficients.items():
-            degree_int = int(degree.split('^')[-1])
-            new_degree = degree_int - 1
-            new_coeff = coeff * degree_int
-            if new_degree == 0:
-                derivative[0] = new_coeff
-            elif new_degree > 0:
-                derivative[new_degree] = new_coeff
-            elif new_degree < 0:
-                derivative[-abs(new_degree)] = new_coeff
+            if degree == 0:
+                pass
+            else:
+                degree_new = degree -1
+                coeff_new = degree * coeff
+                derivative.coefficients[degree_new] = coeff_new
+        print(derivative)
         return derivative
     
     def __getitem__(self, degree):
         return self.coefficients.get(degree, 0)
 
 ## evaluation test
-q1 = Polynomial([4,1])
-p1 = Polynomial([4,0,1])
-print(p1[1],4)
+p1 = Polynomial([4,0,1]) 
+print(p1)
+test_deriv = p1.deriv()
+print(test_deriv)
+Polynomial([1,2,3,0,5]).deriv()
 
 

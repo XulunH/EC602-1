@@ -1,4 +1,4 @@
-# Copyright 2023 Jinzhi Shen jinzhis9@bu.edu
+# Copyright 2023 Jinzhi Shen/Xulun Huang  jinzhis9@bu.edu/jasonh1@bu.edu
 class Polynomial:
     def __init__(self, coefficients=None):
         if coefficients is None:
@@ -65,15 +65,12 @@ class Polynomial:
     def deriv(self):
         derivative = Polynomial()
         for degree, coeff in self.coefficients.items():
-            degree_int = int(degree.split('^')[-1])
-            new_degree = degree_int - 1
-            new_coeff = coeff * degree_int
-            if new_degree == 0:
-                derivative[0] = new_coeff
-            elif new_degree > 0:
-                derivative[new_degree] = new_coeff
-            elif new_degree < 0:
-                derivative[-abs(new_degree)] = new_coeff
+            if degree == 0:
+                pass
+            else:
+                degree_new = degree -1
+                coeff_new = degree * coeff
+                derivative.coefficients[degree_new] = coeff_new
         return derivative
     
     def __getitem__(self, degree):
