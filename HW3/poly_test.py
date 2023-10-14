@@ -61,7 +61,19 @@ class Polynomial:
             result += coeff * (x ** degree)
         return result
     
-    
+    def deriv(self):
+        derivative = Polynomial()
+        for degree, coeff in self.coefficients.items():
+            degree_int = int(degree.split('^')[-1])
+            new_degree = degree_int - 1
+            new_coeff = coeff * degree_int
+            if new_degree == 0:
+                derivative[0] = new_coeff
+            elif new_degree > 0:
+                derivative[new_degree] = new_coeff
+            elif new_degree < 0:
+                derivative[-abs(new_degree)] = new_coeff
+        return derivative
 
 ## test for construction    
    
@@ -129,6 +141,11 @@ print(c)
 
 
 #test for derivative
+r = Polynomial()
+r["x^2"] = 4
+r["x^1"] = 3
 
+derivative = r.deriv()
+print(derivative)
 
 
