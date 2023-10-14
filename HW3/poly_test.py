@@ -10,9 +10,12 @@ class Polynomial:
     def __str__(self):
         res = ""
         for degree, coeff in sorted(self.coefficients.items(), reverse=True):
+            print(degree)
+            print(coeff)
             term = ""
             if coeff == 0:
-                pass
+                term = ""
+                continue
             if coeff != 1 or degree == 0:
                 term += f"{coeff:g}"
             if degree > 0:
@@ -24,7 +27,7 @@ class Polynomial:
             if res and term:
                 res += " + "
             res += term
-
+            print(term)
         return res
     
     def __add__(self, other):
@@ -85,8 +88,6 @@ class Polynomial:
 ## evaluation test
 p1 = Polynomial([4,0,1]) 
 print(p1)
-test_deriv = p1.deriv()
-print(test_deriv)
-Polynomial([1,2,3,0,5]).deriv()
+
 
 

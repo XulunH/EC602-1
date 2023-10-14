@@ -12,6 +12,9 @@ class Polynomial:
         res = ""
         for degree, coeff in sorted(self.coefficients.items(), reverse=True):
             term = ""
+            if coeff == 0:
+                term = ""
+                continue
             if coeff != 1 or degree == 0:
                 term += f"{coeff:g}"
             if degree > 0:
